@@ -26,8 +26,7 @@ Su diseño está optimizado para **dispositivos móviles** y utiliza componentes
 
 > Aquí puedes agregar imágenes o GIFs de tu aplicación:
 
-![App Screenshot](./screenshots/demo1.png)  
-![App Screenshot](./screenshots/demo2.png)  
+(En proceso)
 
 ---
 
@@ -35,42 +34,37 @@ Su diseño está optimizado para **dispositivos móviles** y utiliza componentes
 
 1. **Clona este repositorio**  
    ```bash
-   git clone https://github.com/usuario/nombre-del-proyecto.git
-   cd nombre-del-proyecto
-Instala las dependencias
-
-bash
-Copiar código
+   git clone [https://github.com/mahirovargas/prueba.git]
+   cd mahirovargas/prueba
+   
+2. Instala las dependencias
 npm install
+
 Ejecuta el proyecto en el navegador
-
-bash
-Copiar código
 ionic serve
-Compila para Android/iOS
 
-bash
-Copiar código
+Compila para Android/iOS
 ionic capacitor build android
 ionic capacitor build ios
+
 🛠️ Tecnologías Usadas
+
 ⚡ Ionic 8.7.2
-
 🅰️ Angular 18
-
 🔌 Capacitor
 
 
 👥 Integrantes del Proyecto
-🎯 Jaime Adolfo Riascos – Coordinación general
 
-⚙️ Juan Carlos Sinisterra – Lógica y desarrollo
+🎯 Jaime Adolfo Riascos 
 
-💻 John Adiel Vargas – Programación y documentación
+⚙️ Juan Carlos Sinisterra 
 
-🎨 Kevin Joseph Vabuena – Diseño UI/UX
+💻 John Adiel Vargas
 
-🧪 Marvin Alexander Vallego – Pruebas y soporte técnico
+🎨 Kevin Joseph Vabuena 
+
+🧪 Marvin Alexander Vallego 
 
 📄 Licencia
 Este proyecto está bajo la licencia MIT.
