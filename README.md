@@ -6,7 +6,7 @@
 
 ---
 
-## 🚀 Descripción
+## 🚀 chachara
 
 Este repositorio contiene el desarrollo de una aplicación construida con **Ionic**, un framework moderno que permite crear aplicaciones híbridas y multiplataforma utilizando tecnologías web como **HTML, CSS y JavaScript/TypeScript**.  
 El objetivo del proyecto es aprovechar la flexibilidad de Ionic para crear una solución eficiente, escalable y con una experiencia de usuario amigable.
