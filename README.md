@@ -62,9 +62,9 @@ ionic capacitor build ios
 
 💻 John Adiel Vargas
 
-🎨 Kevin Joseph Vabuena 
+🎨 Kevin Joseph Valbuena 
 
-🧪 Marvin Alexander Vallego 
+🧪 Marvin Alexander Vallejo 
 
 📄 Licencia
 Este proyecto está bajo la licencia MIT.
