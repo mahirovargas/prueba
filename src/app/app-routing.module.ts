@@ -12,6 +12,19 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'registrar-usuario',
+    loadChildren: () => import('./registrar-usuario/registrar-usuario.module').then( m => m.RegistrarUsuarioPageModule)
+  },  {
+    path: 'jcprincipal',
+    loadChildren: () => import('./jcprincipal/jcprincipal.module').then( m => m.JCprincipalPageModule)
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+
+
 ];
 
 @NgModule({

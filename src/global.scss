@@ -25,6 +25,8 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
+
+
 /**
  * Ionic Dark Mode
  * -----------------------------------------------------
@@ -33,5 +35,16 @@
  */
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import "@ionic/angular/css/palettes/dark.system.css";
+ @import "@ionic/angular/css/palettes/dark.class.css";
+/* @import "@ionic/angular/css/palettes/dark.system.css"; */
+
+
+ion-content {
+  --background: #ffffff !important; /* fondo blanco en modo claro */
+  color: var(--ion-text-color) !important;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+:root.ion-palette-dark ion-content {
+  --background: #000000 !important; /* fondo negro en modo oscuro */
+}

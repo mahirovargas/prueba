@@ -1,0 +1,102 @@
+<ion-content fullscreen>
+  <!-- Imagen superior -->
+  <div class="top-image">
+    <img src="assets/img/carroB.jpg" alt="Fashionista" />
+  </div>
+
+  <!-- Contenedor de registro -->
+  <div class="login-section ion-padding">
+    <div class="heading ion-padding">
+      <h1>Welcome Tú ciudad limpia!</h1>
+      <p>Create your account</p>
+    </div>
+
+    <div class="login-form ion-padding">
+      <!-- Nombre -->
+      <div class="form-input">
+        <ion-item lines="full">
+          <ion-icon name="person-outline" slot="start"></ion-icon>
+          <ion-input
+            type="text"
+            name="nombre"
+            label="Nombre"
+            label-placement="floating"
+            placeholder="Ingrese su nombre"
+            required
+          ></ion-input>
+        </ion-item>
+      </div>
+
+      <!-- Teléfono -->
+      <div class="form-input">
+        <ion-item lines="full">
+          <ion-icon name="call-outline" slot="start"></ion-icon>
+          <ion-input
+            type="tel"
+            name="telefono"
+            label="Teléfono"
+            label-placement="floating"
+            placeholder="Ingrese su teléfono"
+            required
+          ></ion-input>
+        </ion-item>
+      </div>
+
+      <!-- Correo -->
+      <div class="form-input">
+        <ion-item lines="full">
+          <ion-icon name="mail-outline" slot="start"></ion-icon>
+          <ion-input
+            type="email"
+            name="correo"
+            label="Correo"
+            label-placement="floating"
+            placeholder="Ingrese su correo"
+            required
+          ></ion-input>
+        </ion-item>
+      </div>
+
+      <!-- Password -->
+      <div class="form-input">
+        <ion-item lines="full">
+          <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+          <ion-input
+            type="password"
+            name="password"
+            label="Password"
+            label-placement="floating"
+            placeholder="Ingrese su contraseña"
+            required
+          ></ion-input>
+        </ion-item>
+      </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="action-buttons ion-padding">
+      <!-- Registrarse -->
+      <ion-button
+        type="button"
+        expand="block"
+        class="login-button"
+        (click)="goHome()"
+      >
+        Registrarse
+      </ion-button>
+
+      <p class="forgot">¿Ya tienes cuenta? Inicia sesión</p>
+
+      <!-- Log in -->
+      <ion-button
+        type="button"
+        expand="block"
+        fill="outline"
+        class="signup-button"
+        (click)="goHome()"
+      >
+        Log in
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

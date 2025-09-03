@@ -1,20 +1,62 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      App BASURA
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content fullscreen>
+  <!-- Imagen superior -->
+  <div class="top-image">
+    <img src="assets/img/carroB.jpg" alt="Fashionista" />
+  </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">App BASURA</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- Contenedor de login -->
+  <div class="login-section ion-padding">
+    <div class="heading ion-padding">
+      <h1>Welcome Tú ciudad limpia!</h1>
+      <p>Sign in to continue</p>
+    </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div class="login-form ion-padding">
+      <!-- Email -->
+      <div class="form-input">
+        <ion-item lines="full">
+          <ion-icon name="mail-outline" slot="start"></ion-icon>
+          <ion-input
+            id="emailInput"
+            type="email"
+            name="email"
+            label="Email"
+            label-placement="floating"
+            placeholder="Enter your email"
+            required
+          ></ion-input>
+        </ion-item>
+      </div>
+
+      <!-- Password -->
+      <div class="form-input">
+        <ion-item lines="full">
+          <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+          <ion-input
+            id="passwordInput"
+            type="password"
+            name="password"
+            label="Password"
+            label-placement="floating"
+            placeholder="Enter your password"
+            required
+          ></ion-input>
+        </ion-item>
+      </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="action-buttons ion-padding">
+      <ion-button expand="block" class="login-button"  (click)="goJCprincipal()">Log in</ion-button>
+      <p class="forgot">Forgot password ?</p>
+      <ion-button
+        expand="block"
+        fill="outline"
+        class="signup-button"
+        routerLink="/registrar-usuario"
+      >
+        Sign Up
+      </ion-button>
+    </div>
   </div>
 </ion-content>
