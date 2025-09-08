@@ -60,9 +60,9 @@ ionic capacitor build ios
 
 ⚙️ Juan Carlos Sinisterra 
 
-💻 John Adiel Vargas
+💻 John Adiel Vargas Lopez
 
-🎨 Kevin Joseph Valbuena 
+🎨 Kevin Joseph Valbuena Perez 
 
 🧪 Marvin Alexander Vallejo 
 
