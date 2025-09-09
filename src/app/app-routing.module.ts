@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'tabs',
     loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
   },
+  {
+    path: 'mapa',
+    loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule)
+  },
 
 
 ];

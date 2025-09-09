@@ -28,6 +28,10 @@ export class TabsPage implements OnInit {
     this.router.navigate(['/jcprincipal']);
   }
 
+  clickmapa(){
+    this.router.navigate(['/mapa']);
+  }
+
 
 
 
