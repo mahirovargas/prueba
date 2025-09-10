@@ -1,4 +1,4 @@
-# Hoy Martin ¿por qué?
+# Odio a Martin ¿por qué?
 
 Como que porque…  
 Te voy a hacer unas preguntas y quiero que me las contestes.  
