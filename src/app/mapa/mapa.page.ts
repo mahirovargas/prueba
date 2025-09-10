@@ -1,100 +1,70 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { Geolocation } from '@capacitor/geolocation';
-import { IonicModule } from '@ionic/angular';
 import * as L from 'leaflet';
+import 'leaflet-defaulticon-compatibility';
 
-// Íconos locales en assets
-const DefaultIcon = L.icon({
-  iconRetinaUrl: 'assets/leaflet/images/marker-icon-2x.png',
-  iconUrl: 'assets/leaflet/images/marker-icon.png',
-  shadowUrl: 'assets/leaflet/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
-});
-L.Marker.prototype.options.icon = DefaultIcon;
+import {
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonMenuButton,
+  IonTitle,
+  IonToolbar
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-mapa',
   templateUrl: './mapa.page.html',
   styleUrls: ['./mapa.page.scss'],
   standalone: true,
-  imports: [IonicModule, FormsModule]
+  imports: [
+    IonButtons, IonHeader, IonToolbar, IonTitle, IonContent, IonMenuButton
+  ],
 })
 export class MapaPage {
-  private map?: L.Map;
+  private map!: L.Map;
+  private mapInitialized = false;
 
-  constructor() {}
+  constructor() {
+    L.Icon.Default.mergeOptions({
+      iconRetinaUrl: 'assets/leaflet/images/marker-icon-2x.png',
+      iconUrl: 'assets/leaflet/images/marker-icon.png',
+      shadowUrl: 'assets/leaflet/images/marker-shadow.png'
+    });
+  }
 
+  // 🔹 Mejor: ionViewDidEnter asegura que el div ya está renderizado y visible
   async ionViewDidEnter() {
-    // Coordenadas fallback (Buenaventura)
-    const fallback: [number, number] = [3.8801, -77.0311];
+    if (this.mapInitialized) return;
 
-    // Si el mapa ya existe, no lo vuelvas a crear
-    if (this.map) {
-      return;
-    }
+    const defaultCoords: L.LatLngExpression = [3.8801, -77.0312];
 
-    // Inicializar mapa
-    this.map = L.map('map').setView(fallback, 14);
+    this.map = L.map('map', { zoomControl: true }).setView(defaultCoords, 13);
 
-    // Tiles de OpenStreetMap (gratis)
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors'
     }).addTo(this.map);
 
-    try {
-      // Ubicación actual con precisión
-      const position = await Geolocation.getCurrentPosition({
-        enableHighAccuracy: true
-      });
+    // Forzar recalculo de tamaño después del render
+    setTimeout(() => this.map.invalidateSize(), 200);
 
-      const userLocation: [number, number] = [
+    try {
+      const position = await Geolocation.getCurrentPosition({ enableHighAccuracy: true });
+      const userCoords: L.LatLngExpression = [
         position.coords.latitude,
         position.coords.longitude
       ];
 
-      // Marcador
-      const marker = L.marker(userLocation).addTo(this.map);
-      marker.bindPopup(
-        `📍 Tu ubicación<br>Lat: ${userLocation[0].toFixed(5)}<br>Lng: ${userLocation[1].toFixed(5)}`
-      ).openPopup();
+      L.marker(userCoords).addTo(this.map)
+        .bindPopup('📍 Estás aquí')
+        .openPopup();
 
-      // Precisión (círculo)
-      const accuracy = position.coords.accuracy;
-      if (accuracy) {
-        L.circle(userLocation, {
-          radius: accuracy,
-          color: 'blue',
-          fillColor: '#3f51b5',
-          fillOpacity: 0.2
-        }).addTo(this.map);
-      }
-
-      // Centrar mapa
-      this.map.setView(userLocation, 16);
-
-    } catch (error) {
-      console.error('Error obteniendo ubicación:', error);
-      L.marker(fallback).addTo(this.map).bindPopup('Buenaventura');
+      this.map.setView(userCoords, 14);
+    } catch (err) {
+      console.error('Error al obtener ubicación:', err);
+      this.map.setView(defaultCoords, 13);
     }
 
-    // Redibuja mapa después de un corto delay
-    setTimeout(() => {
-      this.map?.invalidateSize();
-    }, 200);
-  }
-
-  ionViewWillLeave() {
-    if (this.map) {
-      this.map.remove(); // destruye todo
-      const container = L.DomUtil.get('map');
-      if (container) {
-        (container as any)._leaflet_id = null; // limpia referencia interna
-      }
-      this.map = undefined;
-    }
+    this.mapInitialized = true;
   }
 }

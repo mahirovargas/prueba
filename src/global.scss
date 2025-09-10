@@ -38,6 +38,10 @@
  @import "@ionic/angular/css/palettes/dark.class.css";
 /* @import "@ionic/angular/css/palettes/dark.system.css"; */
 
+@import "~leaflet/dist/leaflet.css";
+@import "~leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
+
+
 
 ion-content {
   --background: #ffffff !important; /* fondo blanco en modo claro */

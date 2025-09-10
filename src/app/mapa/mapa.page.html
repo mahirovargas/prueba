@@ -1,9 +1,21 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Mapa</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      mapa
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div id="map"></div>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">juan carlos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Contenedor del mapa -->
+  <div id="map" style="height: 100%;"></div>
 </ion-content>

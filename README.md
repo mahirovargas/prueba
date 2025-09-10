@@ -1,6 +1,6 @@
 # Odio a Martin ¿por qué?
 
-Como que porque…  
+Como que porque….
 Te voy a hacer unas preguntas y quiero que me las contestes.  
 Este documento explica **por qué y cómo usar la Geolocation API, Google Maps y Leaflet** dentro de un proyecto con **Ionic Angular y Capacitor**.  
 
