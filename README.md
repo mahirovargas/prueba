@@ -15,11 +15,37 @@ El objetivo del proyecto es aprovechar la flexibilidad de Ionic para crear una s
 
 ## ✨ Características
 
-- ⚡ Interfaz **responsiva y moderna**.  
-- 📲 Navegación **intuitiva entre vistas**.  
-- 🤝 Compatible con **Android e iOS**.  
-- 🛠️ Fácil de **extender y mantener**.  
+- ⚡ **Registro e inicio de sesión de usuarios**.  
+- 📍 **Captura de geolocalización** y envío al backend.  
+- 🗺️ **Visualización en mapas con actualización en tiempo real**.  
+- 🚨 **Alertas de geocercas** cuando el vehículo entra o sale de zonas definidas.  
+- 🌍 **Compatibilidad multiplataforma** (Android e iOS).  
+- 🛠️ **Arquitectura modular, escalable y mantenible**.    
 
+## 🗂️ Sprints y Entregas
+
+El desarrollo se organiza en **5 sprints** semanales:
+
+- **Sprint 1 (Semana 1): Registro de usuarios**  
+  - Objetivo: Implementar la funcionalidad de **registro** en la aplicación.  
+  - Historias de usuario: Alta de usuario, validaciones de formulario, almacenamiento seguro.  
+
+- **Sprint 2 (Semana 2): Inicio de sesión**  
+  - Objetivo: Desarrollar el **login** con autenticación de usuarios.  
+  - Historias de usuario: Validación de credenciales, manejo de sesiones, persistencia local.  
+
+- **Sprint 3 (Semana 3): Captura de geolocalización básica**  
+  - Objetivo: Capturar y enviar la posición del vehículo desde la app al backend.  
+  - Historias de usuario: Activar GPS, obtener coordenadas, enviar datos a servidor.  
+
+- **Sprint 4 (Semana 4): Visualización en mapa y seguimiento en tiempo real**  
+  - Objetivo: Mostrar la ubicación del vehículo en un mapa y actualizar en “casi” tiempo real.  
+  - Historias de usuario: Renderizar mapas, actualizar posición periódicamente, diferenciar vehículos.  
+
+- **Sprint 5 (Semana 5): Alertas con geocercas (Geofence)**  
+  - Objetivo: Generar alertas cuando el vehículo entre o salga de una zona definida.  
+  - Historias de usuario: Definir geocercas, monitorear posición relativa, disparar notificaciones.
+  
 ---
 
 ## 📸 Capturas de Pantalla
