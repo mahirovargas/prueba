@@ -1,0 +1,7 @@
+{
+  "name": "recolecion_moderna",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
